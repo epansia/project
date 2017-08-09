@@ -1,0 +1,64 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#!/dashboard">Questionnaires</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="btn-trial"><a ng-click="model.updateQuestionnaire(model.questionnaire)">Update</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="section-padding">
+    <div class="container">
+    <div class="col-xs-4 hidden-xs">
+        <ul class="list-group">
+            <li ng-repeat="Questionnaire in model.Questionnaires" class="list-group-item cl-list-item-borderless">
+                <a href="#!/questionnaire/{{Questionnaire._id}}">
+                    <span class="btn-trial pull-right">Edit</span>
+                </a>
+                <a href="#!/questionnaire/{{Questionnaire._id}}/question">
+                    {{Questionnaire.name}}
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-8">
+        <div ng-show="model.updated" class="alert alert-success" role="alert">{{model.updated}}</div>
+        <form>
+            <div class="form-group">
+                <label for="questionnaireName">Questionnaire Name</label>
+                <input ng-model="model.questionnaire.name"
+                       type="text"
+                       class="form-control"
+                       id="questionnaireName"
+                       placeholder="Name">
+            </div>
+
+            <div class="form-group">
+                <label for="questionnaireDesc">Questionnaire Description</label>
+                <textarea ng-model="model.questionnaire.desc"
+                          class="form-control"
+                          id="questionnaireDesc"
+                          rows="5"
+                          placeholder="Description">
+                </textarea>
+            </div>
+        </form>
+        <a class="btn btn-danger btn-block"
+           ng-click="model.deleteQuestionnaire(model.questionnaire)">Delete</a>
+    </div>
+</div>
+</section>
+
+<nav class="navbar navbar-fixed-bottom navbar-default">
+    <div class="container">
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="btn-trial"><a href="#!/profile">Profile</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

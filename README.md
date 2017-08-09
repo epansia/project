@@ -5,9 +5,9 @@ Name: Min Dai
 
 Graduate student in NEU Align program. 
 
-Heroku link: https://dashboard.heroku.com/apps/dai-min-webdev
+Heroku link: https://dai-min-webdev.herokuapp.com/
 
-Project link: http://localhost:3000/project/index.html
+Project link: http://localhost:5000/project/index.html
 
-Assignments link: http://localhost:3000/assignment/index.html
+Assignments link: http://localhost:5000/assignment/index.html
 

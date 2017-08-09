@@ -1,0 +1,38 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#!/dashboard">Questions</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="btn-trial"><a href="#!/question/new">Add New</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="section-padding">
+    <div class="container-fluid">
+        <ul class="list-group borderless">
+            <li ng-repeat="Questionnaire in model.Questionnaires" class="list-group-item cl-list-item-borderless">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="btn-trial"><a href="#!/question/{{Question._id}}">Edit</a></li>
+                    <li class="btn-trial"><a ng-click="model.deleteQuestion(model.question)">Delete</a></li>
+                </ul>
+                <a href="#!/question/{{Question._id}}/question">
+                    <h2>{{Question.name}}</h2>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<nav class="navbar navbar-fixed-bottom navbar-default">
+    <div class="container">
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="btn-trial"><a href="#!/profile">Profile</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,41 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#!/dashboard">Questions</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="btn-trial"><a ng-click="model.createQuestion(model.questionnaire)">Add New</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div ng-show="model.error" class="alert alert-danger" role="alert">{{model.error}}</div>
+
+    <label for="QuestionName">Question Name</label>
+    <input type="text"
+           class="form-control"
+           placeholder="Question Name"
+           id="QuestionName"
+           ng-model="model.QuestionName"
+           required>
+    <label for="QuestionTitle">Question Title</label>
+    <input type="text"
+           class="form-control"
+           placeholder="Question Title"
+           id="QuestionTitle"
+           ng-model="model.QuestionTitle"
+           required>
+</div>
+
+<nav class="navbar navbar-fixed-bottom navbar-default">
+    <div class="container">
+        <div class="collapse navbar-collapse">
+            <a class="nav navbar-nav navbar-left">
+                <li class="btn-trial"><a href="#!/profile">Profile</a></li>
+            </a>
+        </div>
+    </div>
+</nav>

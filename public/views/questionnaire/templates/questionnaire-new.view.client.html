@@ -1,0 +1,133 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Questionnaires</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="btn-trial"><a ng-click="model.createQuestionnaire(model.questionnaire)">Add New</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="section-padding">
+    <div class="container-fluid">
+        <div class="col-sm-8">
+            <form class="form-horizontal">
+                <div class="panel panel-info">
+                    <div class="panel-heading">Questionnaire Info</div>
+                    <div class="panel-body">
+                        <!--<div class="form-group">
+                            <label class="col-sm-2 control-label">名称:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" ng-model="formData.name">
+                            </div>
+                        </div>-->
+                        <div class="form-group">
+                            <label for="questionnaireName">Questionnaire Name</label>
+                            <input ng-model="model.questionnaire.name"
+                                   type="text"
+                                   class="form-control"
+                                   id="questionnaireName"
+                                   placeholder="Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="questionnaireDesc">Questionnaire Description</label>
+                            <textarea ng-model="model.questionnaire.desc"
+                                      class="form-control"
+                                      id="questionnaireDesc"
+                                      rows="5"
+                                      placeholder="Description">
+                            </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Choose Question:</label>
+                            <div class="col-sm-10">
+                                <ul class="list-group" style="max-height:500px;overflow:auto;">
+                                    <li class="list-group-item" ng-repeat="q in model.questions">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="{{q.id}}" ng-model="q.checked">
+                                                {{q.name}}
+                                            </label>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-group" style="margin:80px 0">
+                    <label class="col-sm-2 control-label">&nbsp;</label>
+                    <div class="col-sm-3">
+                        <button class="btn btn-block btn-primary"
+                                ng-click="newQuestionnaire(model.questionnaire.name, model.questionnaire.desc)">Submit</button>
+                    </div>
+                    <div class="col-sm-3">
+                        <a href="#!/questionnaire" class="btn btn-default btn-block">Cancel<a/>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="previewarea col-sm-4">
+            <div class="panel panel-info">
+                <div class="panel-heading">试卷预览</div>
+                <div class="panel-body" style="max-height: 500px; overflow-y: auto;">
+                    <ol>
+                        <li ng-repeat="formData in questions" ng-show="formData.checked">
+                            <div ui-view="{{formData.qtype|qtypestr_en}}Preview"></div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!--<div class="col-xs-4 hidden-xs">
+            <ul class="list-group">
+                <li ng-repeat="Questionnaire in model.Questionnaires" class="list-group-item cl-list-item-borderless">
+                    <a href="#!/questionnaire/{{Questionnaire._id}}">
+                        <span class="btn-trial pull-right">Edit</span>
+                    </a>
+                    <a href="#!/questionnaire/{{Questionnaire._id}}/question">
+                        {{Questionnaire.name}}
+                    </a>
+                </li>
+            </ul>
+        </div>-->
+        <!--<div class="col-xs-8">
+            <div ng-show="model.error" class="alert alert-danger" role="alert">{{model.error}}</div>
+            <form>
+                <div class="form-group">
+                    <label for="questionnaireName">Questionnaire Name</label>
+                    <input ng-model="model.questionnaire.name"
+                           type="text"
+                           class="form-control"
+                           id="questionnaireName"
+                           placeholder="Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="questionnaireDesc">Questionnaire Description</label>
+                    <textarea ng-model="model.questionnaire.desc"
+                              class="form-control"
+                              id="questionnaireDesc"
+                              rows="5"
+                              placeholder="Description">
+                    </textarea>
+                </div>
+            </form>
+        </div>-->
+    </div>
+</section>
+
+<nav class="navbar navbar-fixed-bottom navbar-default">
+    <div class="container">
+        <div class="collapse navbar-collapse">
+            <a class="nav navbar-nav navbar-left">
+                <li class="btn-trial"><a href="#!/profile">Profile</a></li>
+            </a>
+        </div>
+    </div>
+</nav>

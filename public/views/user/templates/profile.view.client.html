@@ -1,0 +1,62 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Profile</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="btn-trial"><a ng-click="model.updateUser(model.user)">Update</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section class="section-padding">
+    <div class="container-fluid">
+        <div ng-show="model.error" class="alert alert-danger" role="alert">{{model.error}}</div>
+        <div ng-show="model.updated" class="alert alert-success" role="alert">{{model.updated}}</div>
+        <form class="cl-form-bottom-padding">
+            <label for="username">Username</label>
+            <input ng-model="model.user.username"
+                   type="text"
+                   class="form-control"
+                   placeholder="Username"
+                   id="username" required>
+            <label for="email">Email</label>
+            <input ng-model="model.user.email"
+                   type="email"
+                   class="form-control"
+                   placeholder="alice@emmail.com"
+                   id="email" required>
+            <label for="fName">First Name</label>
+            <input ng-model="model.user.firstName"
+                   type="text"
+                   class="form-control"
+                   placeholder="first name"
+                   id="fName" required>
+            <label for="lName">Last Name</label>
+            <input ng-model="model.user.lastName"
+                   type="text"
+                   class="form-control"
+                   placeholder="last name"
+                   id="lName" required>
+        </form>
+
+        <a ng-click="model.updateUser(model.user)" class="btn btn-success btn-block">
+            Update
+        </a>
+        <a ng-click="model.logout()" class="btn btn-danger btn-block">
+            Logout
+        </a>
+        <a href="#!/dashboard" class="btn btn-primary btn-block">
+            Dashboard
+        </a>
+        <a ng-click="model.deleteUser(model.user)"
+           class="btn btn-danger btn-block">
+            Unregister
+        </a>
+        <a href="#!/home" class="btn btn-primary btn-block">
+            HomeQuestion
+        </a>
+    </div>
+</section>
